@@ -4,7 +4,7 @@ import heroImage from "../../assets/heroImg.png";
 
 const Hero = () => {
   return (
-    <Box w={"100vw"} h={"100vh"}>
+    <Box w={"100vw"} h={"80vh"}>
       <Grid templateColumns="repeat(2, 1fr)" gap={4}>
         <GridItem
           w={{ base: "100vw", md: "60vw" }}
