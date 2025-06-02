@@ -95,7 +95,7 @@ const Hero = () => {
             <Image
               src={heroImage}
               alt="Hero Image"
-              pt={20}
+              pt={{ base: "0", md: "20" }}
               w="100%"
               maxW="500px"
               h="auto"
