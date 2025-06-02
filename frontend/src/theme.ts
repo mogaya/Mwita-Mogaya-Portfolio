@@ -4,6 +4,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
+import { html } from "framer-motion/client";
 
 const theme = extendTheme({
   fonts: {
@@ -36,6 +37,9 @@ const theme = extendTheme({
   },
   styles: {
     global: {
+      html: {
+        overflowX: "hidden",
+      },
       body: {
         bg: "background",
         color: "foreground",
