@@ -104,7 +104,11 @@ const Projects = () => {
                   borderRadius={"lg"}
                   backgroundColor={"primary"}
                   color={"white"}
-                  _hover={{ backgroundColor: "teal", color: "white" }}
+                  _hover={{
+                    backgroundColor: "teal",
+                    color: "white",
+                    borderColor: "teal",
+                  }}
                 >
                   Source Code
                 </Button>
