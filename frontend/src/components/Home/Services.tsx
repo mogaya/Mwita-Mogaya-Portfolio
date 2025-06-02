@@ -7,7 +7,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Slider from "react-slick";
 import services from "../../data/services";
 import iconMap from "../../data/iconMap";
