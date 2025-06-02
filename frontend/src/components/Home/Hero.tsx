@@ -4,7 +4,7 @@ import heroImage from "../../assets/heroImg.png";
 
 const Hero = () => {
   return (
-    <Box as="section" bgColor={"White"} w={"100vw"}>
+    <Box as="section" w={"100vw"}>
       <Box maxW="1200px" w={{ base: "90vw", md: "80vw" }} mx={"auto"} py={10}>
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
           <GridItem
@@ -61,7 +61,7 @@ const Hero = () => {
                   backgroundColor={"primary"}
                   size={{ base: "md", md: "lg" }}
                   _hover={{
-                    backgroundColor: "navy",
+                    backgroundColor: "teal",
                     color: "white",
                   }}
                 >
@@ -76,11 +76,11 @@ const Hero = () => {
                   borderColor={"primary"}
                   size={{ base: "md", md: "lg" }}
                   _hover={{
-                    color: "navy",
-                    borderColor: "navy",
+                    color: "teal",
+                    borderColor: "teal",
                   }}
                 >
-                  Contact Me
+                  Download CV
                 </Button>
               </Box>
             </Box>
