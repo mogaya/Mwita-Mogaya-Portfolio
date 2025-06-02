@@ -15,7 +15,7 @@ import { projects } from "../../data/projects";
 
 const Projects = () => {
   return (
-    <Box as="section" bgColor={"secondary"} w={"100vw"}>
+    <Box as="section" w={"100vw"}>
       <Box maxW="1200px" w={{ base: "90vw", md: "80vw" }} mx={"auto"} py={10}>
         {/* Section Header */}
         <Box mb={8}>
@@ -93,8 +93,8 @@ const Projects = () => {
                   borderRadius={"lg"}
                   borderColor={"primary"}
                   _hover={{
-                    borderColor: "navy",
-                    color: "navy",
+                    borderColor: "teal",
+                    color: "teal",
                   }}
                 >
                   Live Demo
@@ -104,7 +104,7 @@ const Projects = () => {
                   borderRadius={"lg"}
                   backgroundColor={"primary"}
                   color={"white"}
-                  _hover={{ backgroundColor: "navy", color: "white" }}
+                  _hover={{ backgroundColor: "teal", color: "white" }}
                 >
                   Source Code
                 </Button>
