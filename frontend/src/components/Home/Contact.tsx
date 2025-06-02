@@ -43,7 +43,7 @@ const Contact = () => {
           </Text>
         </Box>
 
-        <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
           {/* Contact Info */}
           <GridItem>
             <Card borderRadius={"xl"} overflow="hidden" shadow={"md"}>
