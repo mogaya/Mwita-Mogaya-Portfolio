@@ -36,6 +36,9 @@ const theme = extendTheme({
   },
   styles: {
     global: {
+      html: {
+        overflowX: "hidden",
+      },
       body: {
         bg: "background",
         color: "foreground",
