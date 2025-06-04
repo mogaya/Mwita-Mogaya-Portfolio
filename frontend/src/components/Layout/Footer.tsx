@@ -1,6 +1,7 @@
-import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Text, Image } from "@chakra-ui/react";
 import { FaInstagram, FaSquareGithub, FaWhatsapp } from "react-icons/fa6";
 import { TfiLinkedin } from "react-icons/tfi";
+import signature from "../../assets/signature.gif"; // Adjust the path as necessary
 
 const Footer = () => {
   return (
@@ -15,23 +16,29 @@ const Footer = () => {
         <Flex
           flexDirection={{ base: "column", md: "row" }}
           justify={"space-between"}
-          alignItems={{ base: "start", md: "center" }}
+          alignItems={{ base: "start", md: "end" }}
         >
           <Box mb={{ base: 6, md: 0 }}>
-            <Text as={"h3"} fontSize={"xl"} fontWeight={"bold"}>
+            <Image
+              src={signature}
+              alt="A fun GIF"
+              objectFit="cover"
+              borderRadius="md"
+            />
+            {/* <Text as={"h3"} fontSize={"xl"} fontWeight={"bold"}>
               Mwita Mogaya
-            </Text>
+            </Text> */}
             <Text color={"foreground"} fontWeight={"medium"} opacity={0.8}>
               Full Stack Developer & Graphic Designer
             </Text>
           </Box>
 
-          <Flex flexDirection={"row"} gap={3} justifyContent={"center"}>
+          <Flex flexDirection={"row"} gap={1} justifyContent={"center"}>
             <IconButton
               as={"a"}
               href={"https://wa.me/254704379546"}
               aria-label={"linkedin"}
-              icon={<FaWhatsapp style={{ fontSize: 30 }} />}
+              icon={<FaWhatsapp style={{ fontSize: 25 }} />}
               backgroundColor={"transparent"}
               _focus={{ border: "none", color: "primary" }}
               _hover={{ border: "none", color: "primary" }}
@@ -45,7 +52,7 @@ const Footer = () => {
               icon={
                 <FaSquareGithub
                   style={{
-                    fontSize: 30,
+                    fontSize: 25,
                   }}
                 />
               }
@@ -59,7 +66,7 @@ const Footer = () => {
               as={"a"}
               href={"https://www.instagram.com/_mogaya/"}
               aria-label={"linkedin"}
-              icon={<FaInstagram style={{ fontSize: 31 }} />}
+              icon={<FaInstagram style={{ fontSize: 25 }} />}
               backgroundColor={"transparent"}
               borderRadius={"full"}
               _focus={{ border: "none", color: "primary" }}
@@ -71,7 +78,7 @@ const Footer = () => {
               href={"https://www.linkedin.com/in/mwita-mogaya/"}
               aria-label={"linkedin"}
               borderRadius={"full"}
-              icon={<TfiLinkedin style={{ fontSize: 30 }} />}
+              icon={<TfiLinkedin style={{ fontSize: 25 }} />}
               backgroundColor={"transparent"}
               _focus={{ border: "none", color: "primary" }}
               _hover={{ border: "none", color: "primary" }}
@@ -81,9 +88,9 @@ const Footer = () => {
         </Flex>
         <Text
           as={"p"}
-          // fontSize={"md"}
+          // fontSize={"sm"}
           px={2}
-          textAlign={"end"}
+          textAlign={{ base: "start", md: "end" }}
           color={"foreground"}
           fontWeight={"medium"}
           opacity={0.8}
