@@ -50,7 +50,8 @@ const Hero = () => {
                 display="flex"
                 flexDirection={{ base: "column", md: "row" }}
                 gap={4}
-                justifyContent={{ base: "center", md: "flex-start" }}
+                // justifyContent={{ base: "center", md: "flex-start" }}
+                alignItems="center"
                 mt={6}
               >
                 <Button
@@ -61,6 +62,7 @@ const Hero = () => {
                   borderRadius="full"
                   bg="primary"
                   size="lg"
+                  w={{ base: "60%", md: "auto" }}
                   _hover={{
                     backgroundColor: "foreground",
                     color: "white",
@@ -76,6 +78,7 @@ const Hero = () => {
                   borderColor="primary"
                   borderRadius="full"
                   size="lg"
+                  w={{ base: "60%", md: "auto" }}
                   _hover={{
                     color: "foreground",
                     borderColor: "foreground",
