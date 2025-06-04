@@ -37,6 +37,7 @@ const Contact = () => {
             fontWeight={"medium"}
             color={"foreground"}
             opacity={0.8}
+            pt={{ base: 2, md: "none" }}
           >
             Interested in working together? Have a question? Feel free to reach
             out!
