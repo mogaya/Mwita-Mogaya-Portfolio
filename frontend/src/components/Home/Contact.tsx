@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <Box as="section" w={"100vw"} bgColor={"secondary"}>
       <Box maxW="1200px" w={{ base: "80vw", md: "80vw" }} mx={"auto"} py={10}>
-        <Box mb={8}>
+        <Box mb={8} id="contact">
           <Text as={"h2"} fontSize={"3xl"} fontWeight="bold" mb={4}>
             Get In Touch
           </Text>
