@@ -62,7 +62,8 @@ const Hero = () => {
                   bg="primary"
                   size="lg"
                   _hover={{
-                    backgroundColor: "teal",
+                    backgroundColor: "foreground",
+                    color: "white",
                   }}
                 >
                   View My Work
@@ -76,8 +77,8 @@ const Hero = () => {
                   borderRadius="full"
                   size="lg"
                   _hover={{
-                    color: "teal",
-                    borderColor: "teal",
+                    color: "foreground",
+                    borderColor: "foreground",
                   }}
                 >
                   Download CV
