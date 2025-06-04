@@ -49,8 +49,8 @@ const Services = () => {
   };
 
   return (
-    <Box as="section" w={"100vw"} bgColor={"secondary"}>
-      <Box maxW="1200px" w={{ base: "80vw", md: "80vw" }} mx={"auto"} py={10}>
+    <Box as="section" w={"100vw"} bgColor={"secondary"} id="services">
+      <Box maxW="1200px" w={{ base: "80vw", md: "80vw" }} mx={"auto"} py={8}>
         {/* Section Header */}
         <Box mb={8}>
           <Text as={"h2"} fontSize={"3xl"} fontWeight="bold" mb={4}>

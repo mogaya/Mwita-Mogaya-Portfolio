@@ -8,7 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 interface NavBarProps {
   label: string;
@@ -17,10 +17,11 @@ interface NavBarProps {
 
 const NavBarItems: NavBarProps[] = [
   { label: "Home", uri: "/" },
-  { label: "About", uri: "/about" },
-  { label: "Services", uri: "/services" },
-  { label: "Projects", uri: "/projects" },
-  { label: "Contact", uri: "/contact" },
+  // { label: "About", uri: "/about" },
+  { label: "Tech-lab", uri: "/dev-projects" },
+  { label: "Design-lab", uri: "/graphic-projects" },
+  { label: "Services", uri: "/#services" },
+  { label: "Contact", uri: "/#contact" },
 ];
 
 const NavBar = () => {
@@ -44,7 +45,7 @@ const NavBar = () => {
       <Box maxW={"1200px"} mx={"auto"} px={{ base: 4, md: 6 }} py={4}>
         <Flex alignItems={"center"} justifyContent={"space-between"}>
           <Box
-            as={Link}
+            as={NavLink}
             to={"/"}
             _hover={{ textDecoration: "none" }}
             transition={"transform 0.2s"}
@@ -67,21 +68,37 @@ const NavBar = () => {
 
           {/* DeskTop */}
           <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-            {NavBarItems.map((item) => (
-              <Box
-                key={item.uri}
-                as={Link}
-                to={item.uri}
-                fontSize={"md"}
-                fontWeight={location.pathname == item.uri ? "bold" : "medium"}
-                color={location.pathname == item.uri ? "primary" : "foreground"}
-                _hover={{ color: "primary", textDecoration: "none" }}
-                transition={"all 0.2s"}
-                cursor={"pointer"}
-              >
-                {item.label}
-              </Box>
-            ))}
+            {NavBarItems.map((item) => {
+              const isHashRoute = item.uri.includes("#");
+              const currentPath = location.pathname;
+              const currentHash = location.hash;
+
+              let isActive = false;
+
+              if (isHashRoute) {
+                const [itemPath, itemHash] = item.uri.split("#");
+                isActive =
+                  currentPath === itemPath && currentHash === `#${itemHash}`;
+              } else {
+                isActive = currentPath === item.uri;
+              }
+
+              return (
+                <Box
+                  key={item.uri}
+                  as={NavLink}
+                  to={item.uri}
+                  fontSize={"md"}
+                  fontWeight={isActive ? "bold" : "medium"}
+                  color={isActive ? "primary" : "foreground"}
+                  _hover={{ color: "primary", textDecoration: "none" }}
+                  transition={"all 0.2s"}
+                  cursor={"pointer"}
+                >
+                  {item.label}
+                </Box>
+              );
+            })}
           </HStack>
 
           {/* Mobile Menu Btn */}
@@ -122,14 +139,14 @@ const NavBar = () => {
             align={"flex-start"}
             spacing={4}
             my={2}
-            py={2}
+            pt={4}
             borderTop={"1px"}
             borderColor={"primary"}
           >
             {NavBarItems.map((item) => (
               <Box
                 key={item.uri}
-                as={Link}
+                as={NavLink}
                 to={item.uri}
                 fontSize={"md"}
                 fontWeight={location.pathname === item.uri ? "bold" : "medium"}
