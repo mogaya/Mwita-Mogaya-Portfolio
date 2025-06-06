@@ -1,11 +1,11 @@
 export const projects = [
   {
     id: 1,
-    title: "TecTally - Asset Manager",
+    title: "TecTally - Asset Manager Mobile app",
     description:
-      "A mobile app to manage IT assets efficiently for institutions.",
+      "A cross-platform mobile app for asset management, built to streamline inventory tracking, reduce manual errors, and improve operational efficiency.",
     tech: ["Flutter", "Dart", "PHP", "MySQL"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "tectally",
     liveUrl: "#",
     sourceUrl: "#",
   },
@@ -14,7 +14,7 @@ export const projects = [
     id: 2,
     title: "NurseShelf - Subscription based digital library",
     description:
-      "a digital library that provides nursing students and professionals with categorized study resources, including notes and revision papers.",
+      "A digital library that provides nursing students and professionals with categorized study resources, including notes and revision papers.",
     tech: [
       "React",
       "Typescript",
@@ -23,18 +23,18 @@ export const projects = [
       "PostgreSQL",
       "Docker",
     ],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "nur",
     liveUrl: "#",
     sourceUrl: "#",
   },
 
   {
     id: 3,
-    title: "Escape With Us – Travel Agency Website",
+    title: "LEEDSONS CO. LTD – corporate website",
     description:
-      "A WordPress-powered website for a travel agency, showcasing tour packages, destinations, and travel services.",
-    tech: ["WordPress", "Elementor", "PHP", "CSS"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "A conversion focused website for a debt collection agency, built to elevate credibility, drive client engagement, and position the company for increased lead generation.",
+    tech: ["Vite", "React", "TypeScript", "Chakra UI"],
+    image: "leedsons",
     liveUrl: "#",
     sourceUrl: "#",
   },
