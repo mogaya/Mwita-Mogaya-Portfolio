@@ -1,7 +1,8 @@
 import { Box, Flex, IconButton, Text, Image } from "@chakra-ui/react";
 import { FaInstagram, FaSquareGithub, FaWhatsapp } from "react-icons/fa6";
 import { TfiLinkedin } from "react-icons/tfi";
-import signature from "../../assets/signature.gif"; // Adjust the path as necessary
+import signature from "../../assets/signature.gif";
+// import signature from "../../assets/signature.mp4";
 
 const Footer = () => {
   return (
@@ -19,12 +20,30 @@ const Footer = () => {
           alignItems={{ base: "start", md: "end" }}
         >
           <Box mb={{ base: 6, md: 0 }}>
+            {/* mp4 */}
+            {/* <Box
+              as="video"
+              src={signature}
+              autoPlay
+              // loop
+              muted
+              playsInline
+              borderRadius={"md"}
+              objectFit={"cover"}
+              w={"300px"}
+              h={"100px"}
+            ></Box> */}
+
+            {/* gif */}
             <Image
               src={signature}
               alt="A fun GIF"
               objectFit="cover"
               borderRadius="md"
+              w={"300px"}
             />
+
+            {/* Title */}
             {/* <Text as={"h3"} fontSize={"xl"} fontWeight={"bold"}>
               Mwita Mogaya
             </Text> */}
