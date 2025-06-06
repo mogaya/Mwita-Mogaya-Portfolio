@@ -12,6 +12,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { projects } from "../../data/projects";
+import projectImgMap from "../../data/projectImgMap";
 
 const Projects = () => {
   return (
@@ -43,7 +44,7 @@ const Projects = () => {
               maxW={"300px"}
             >
               <Image
-                src={project.image}
+                src={projectImgMap[project.image]}
                 alt={project.title}
                 w="100%"
                 h="200px"
