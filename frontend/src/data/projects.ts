@@ -24,7 +24,7 @@ export const projects = [
       "Docker",
     ],
     image: "nur",
-    liveUrl: "#",
+    liveUrl: "https://nurseshelfke.com/",
     sourceUrl: "#",
   },
 
@@ -35,7 +35,7 @@ export const projects = [
       "A conversion focused website for a debt collection agency, built to elevate credibility, drive client engagement, and position the company for increased lead generation.",
     tech: ["Vite", "React", "TypeScript", "Chakra UI"],
     image: "leedsons",
-    liveUrl: "#",
+    liveUrl: "http://leedsons.com/",
     sourceUrl: "#",
   },
 ];
