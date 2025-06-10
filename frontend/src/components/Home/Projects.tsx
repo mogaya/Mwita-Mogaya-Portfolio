@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { projects } from "../../data/projects";
 import projectImgMap from "../../data/projectImgMap";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
@@ -35,13 +36,14 @@ const Projects = () => {
           </Text>
         </Box>
 
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={6} mx={"auto"}>
           {projects.map((project) => (
             <Card
               key={project.id}
               borderRadius="xl"
               overflow="hidden"
-              maxW={"300px"}
+              mx={"auto"}
+              // maxW={"300px"}
             >
               <Image
                 src={projectImgMap[project.image]}
@@ -87,8 +89,14 @@ const Projects = () => {
                   </Flex>
                 </Stack>
               </CardBody>
-              <CardFooter display={"flex"} justify={"space-between"}>
+              <CardFooter
+                display={"flex"}
+                justify={"space-between"}
+                gap={{ base: 0, md: 2 }}
+              >
                 <Button
+                  as={"a"}
+                  href={project.liveUrl}
                   size={{ base: "sm", md: "md" }}
                   variant="outline"
                   borderRadius={"lg"}
@@ -101,6 +109,8 @@ const Projects = () => {
                   Live Demo
                 </Button>
                 <Button
+                  as={Link}
+                  to={"/#contact"}
                   size={{ base: "sm", md: "md" }}
                   borderRadius={"lg"}
                   backgroundColor={"primary"}
@@ -111,7 +121,7 @@ const Projects = () => {
                     borderColor: "teal",
                   }}
                 >
-                  Source Code
+                  Discuss Details
                 </Button>
               </CardFooter>
             </Card>
