@@ -56,7 +56,7 @@ const Hero = () => {
               >
                 <Button
                   as={NavLink}
-                  to="/projects"
+                  to="/dev-projects"
                   variant="solid"
                   color="white"
                   borderRadius="full"
@@ -71,8 +71,11 @@ const Hero = () => {
                   View My Work
                 </Button>
                 <Button
-                  as={NavLink}
-                  to="/"
+                  as={"a"}
+                  href="/mwita's-cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // download="Mwita-Mogaya-CV.pdf"
                   variant="outline"
                   color="primary"
                   borderColor="primary"
@@ -84,7 +87,7 @@ const Hero = () => {
                     borderColor: "foreground",
                   }}
                 >
-                  Download CV
+                  View my CV
                 </Button>
               </Box>
             </Box>
