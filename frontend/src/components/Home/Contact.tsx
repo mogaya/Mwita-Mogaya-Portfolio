@@ -75,7 +75,7 @@ const Contact = () => {
       );
       msgSuccess();
       setTimeout(() => {
-        navigate("/");
+        navigate(0);
       }, 6000);
     } catch (err) {
       msgErr();
