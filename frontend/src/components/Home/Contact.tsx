@@ -13,17 +13,78 @@ import {
   Input,
   Text,
   Textarea,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+
+const schema = z.object({
+  name: z.string().min(3, { message: "name must be more than 3 characters" }),
+  email: z.string().email(),
+  message: z
+    .string()
+    .min(6, { message: "message must be more than 6 characters" }),
+});
+
+type FormData = z.infer<typeof schema>;
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const navigate = useNavigate();
+
+  const toast = useToast();
+  const msgSuccess = () => {
+    toast({
+      title: "Message Sent",
+      description: "message sent successfully",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
   };
+
+  const msgErr = () => {
+    toast({
+      title: "Contact Form Error",
+      description: "try again, if persistent call support",
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      msgSuccess();
+      setTimeout(() => {
+        navigate("/");
+      }, 6000);
+    } catch (err) {
+      msgErr();
+      setTimeout(() => {
+        navigate(0);
+      }, 6000);
+    }
+  };
+
   return (
     <Box as="section" w={"100vw"} bgColor={"secondary"}>
       <Box maxW="1200px" w={{ base: "80vw", md: "80vw" }} mx={"auto"} py={10}>
@@ -62,7 +123,10 @@ const Contact = () => {
                         focusBorderColor="primary"
                         autoComplete="name"
                         borderRadius={"lg"}
-                      ></Input>
+                      />
+                      {errors.name && (
+                        <Text color={"red.600"}>{errors.name.message}</Text>
+                      )}
                     </FormControl>
 
                     {/* Email */}
@@ -76,7 +140,10 @@ const Contact = () => {
                         focusBorderColor="primary"
                         autoComplete="email"
                         borderRadius={"lg"}
-                      ></Input>
+                      />
+                      {errors && (
+                        <Text color={"red.600"}>{errors.email?.message}</Text>
+                      )}
                     </FormControl>
 
                     {/* Message */}
@@ -88,7 +155,10 @@ const Contact = () => {
                         placeholder="Type your message ..."
                         focusBorderColor="primary"
                         borderRadius={"lg"}
-                      ></Textarea>
+                      />
+                      {errors && (
+                        <Text color={"red.600"}>{errors.message?.message}</Text>
+                      )}
                     </FormControl>
 
                     {/* Button */}
